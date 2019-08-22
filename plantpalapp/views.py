@@ -1,6 +1,4 @@
-from django.shortcuts import render
-
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 
 from .models import Plant
 
@@ -8,3 +6,7 @@ def index(request):
     plants = Plant.objects.order_by("name")
     context = { "plants": plants }
     return render(request, "plantpalapp/index.html", context)
+
+def show_plant(request, plant_id):
+    plant = get_object_or_404(Plant, pk=plant_id)
+    return render(request, "plantpalapp/show_plant.html", { "plant": plant })

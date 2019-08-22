@@ -1,0 +1,6 @@
+<a href="/plants">< Back</a>
+<h1>{{ plant.name }}</h1>
+<h2>{{ plant.location }}</h1>
+{% if plant.purchased_date %}
+  <p>Purchased on {{ plant.purchased_date}}</p>
+{% endif %}
