@@ -4,8 +4,7 @@ from .models import Plant
 
 def index(request):
     plants = Plant.objects.order_by("name")
-    context = { "plants": plants }
-    return render(request, "plantpalapp/index.html", context)
+    return render(request, "plantpalapp/index.html", { "plants": plants })
 
 def show_plant(request, plant_id):
     plant = get_object_or_404(Plant, pk=plant_id)

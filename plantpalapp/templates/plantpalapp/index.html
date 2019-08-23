@@ -3,7 +3,7 @@
 {% if plants %}
   <ul>
     {% for plant in plants %}
-      <li>{{ plant.name }} | {{ plant.location }}</li>
+      <li><a href="{% url 'plant' plant.id %}">{{ plant.name }} | {{ plant.location }}</a></li>
     {% endfor %}
   </ul>
 {% else %}
