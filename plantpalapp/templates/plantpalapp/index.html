@@ -1,0 +1,11 @@
+<p>Welcome to PlantPal</p>
+
+{% if plants %}
+  <ul>
+    {% for plant in plants %}
+      <li>{{ plant.name }} | {{ plant.location }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No plants yet.</p>
+{% endif %}
